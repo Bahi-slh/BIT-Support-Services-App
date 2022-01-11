@@ -1,0 +1,135 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BITWebApp.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIT Support Services</title>
+
+    <!-- Bootstrap css -->
+    <link href="BootStrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- DataTable css-->
+    <link href="Datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%-- JQuery files --%>
+    <script src="BootStrap/js/bootstrap.min.js.map"></script>
+     <!-- site css  espesifically for footer css-->
+    <link href="Content/footer.css" rel="stylesheet" />
+
+    <!-- other pages use this placeholder to show their dynamic datas -->
+    <asp:ContentPlaceHolder runat="server" ID="head">
+
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form runat="server" id="masterForm">
+         <div>
+             <nav class="navbar navbar-expand-sm navbar-dark " style="background-color: #5f3ee6">
+                 
+
+                 <a class="navbar-brand" href="#">
+                     <img src="/Images/BIT-logo-green.png" width="115" height="70"/>
+                 </a>
+
+                 <div class="collapse navbar-collapse" id="navbarContent">
+                     <ul class="navbar-nav mr-auto">
+
+                         <li class="nav-item active"><a class="nav-link" href="homepage.aspx">Home</a></li>
+
+                         <li class="nav-item active"><a class="nav-link" href="services.aspx">Services</a></li>
+
+                         <li class="nav-item active"><a class="nav-link" href="contact.aspx">Contact Us</a></li>
+                     </ul>
+
+                     <ul class="navbar-nav">
+                         <li class="navbar-nav active">
+                         <asp:LinkButton runat="server" CssClass="nav-link"
+                             ID="lbtnUserLogin"
+                             onClick="lbtnUserLogin_Click">Login</asp:LinkButton>
+                         </li>
+
+                         <li class="navbar-nav active">
+                         <asp:LinkButton runat="server" CssClass="nav-link"
+                             ID="lbtnNewJobRequest"
+                             onClick="lbtnNewJobRequest_Click" Visible="false">New Job Request</asp:LinkButton>
+                         </li>
+
+                         <li class="navbar-nav active">
+                         <asp:LinkButton runat="server" CssClass="nav-link"
+                             ID="lbtnClientJobReqs"
+                             onClick="lbtnClientJobReqs_Click" Visible="false">Your Job Requests</asp:LinkButton>
+                         </li>
+
+                         <!-- for contractor -->
+                         <li class="navbar-nav active">
+                         <asp:LinkButton runat="server" CssClass="nav-link"
+                             ID="lbtnAcceptedjobReqs"
+                             onClick="lbtnAcceptedjobReqs_Click" Visible="false">Accepted Jobs</asp:LinkButton>
+                         </li>
+
+                         <li class="navbar-nav active">
+                         <asp:LinkButton runat="server" CssClass="nav-link"
+                             ID="lbtnAssignedJobs"
+                             onClick="lbtnAssignedJobs_Click" Visible="false">Assigned Jobs</asp:LinkButton>
+                         </li>
+
+
+                         <!-- for staff -->
+                         <li class="navbar-nav active">
+                         <asp:LinkButton runat="server" CssClass="nav-link"
+                             ID="lbtnAllRejectedJobs"
+                             onClick="lbtnAllRejectedJobs_Click" Visible="false">Rejected Jobs</asp:LinkButton>
+                         </li>
+
+                         <li class="nav-item active">
+                            <asp:LinkButton runat="server" CssClass="nav-link" ID="lbtnAllJobs"
+                                onClick="lbtnAllJobs_Click" Visible="false">
+                               Accepted Jobs
+                            </asp:LinkButton>
+                        </li>
+
+                        <li class="nav-item active">
+                            <asp:LinkButton runat="server" CssClass="nav-link" ID="lbtnAllCompletedJobs"
+                                onClick="lbtnAllCompletedJobs_Click" Visible="false">
+                               Completed Jobs
+                            </asp:LinkButton>
+                        </li>
+
+                         <li class="nav-item active">
+                            <asp:LinkButton runat="server" CssClass="nav-link" ID="lbtnNewJobRequests"
+                                onClick="lbtnNewJobRequests_Click" Visible="false">
+                               New Job Requests
+                            </asp:LinkButton>
+                        </li>
+                         
+                         <li class="navbar-nav active">
+                         <asp:LinkButton runat="server" CssClass="nav-link"
+                             ID="lbtnUserLogout"
+                             onClick="lbtnUserLogout_Click" Visible="false">Logout</asp:LinkButton>
+                         </li>
+
+                     </ul>
+                 </div>
+
+
+             </nav>
+         </div>
+
+
+        <asp:ContentPlaceHolder ID="mainContent" runat="server">
+
+        </asp:ContentPlaceHolder>
+        
+          <div id="Footer">  
+              <footer>
+                <p class="text-center text-white"
+                    style="background-color: #5f3ee6; padding:30px">
+                    &copy; <%: DateTime.Now.Year %> - BIT Support Services</p>
+            </footer>
+          </div>
+
+    </form>
+</body>
+</html>

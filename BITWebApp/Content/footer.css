@@ -1,0 +1,22 @@
+﻿
+#Footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height:100px;
+    overflow: hidden;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin: 0 0 100px;
+
+}
+mainContent{
+    padding: 25px;
+}
+.tableTitle{
+    padding:15px;
+}
